@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TatoPRO Audifonos</title>
+    <!-- fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- link normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- link style -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor contenidoHeader">
+            <div class="imagenHeader">
+                <!-- uso de pícture -->
+                <picture>
+                    <source
+                        sizes="1920w" 
+                        srcset="img/header.avif 1920w"
+                        type="image/avif">
+                    <source
+                        sizes="1920w" 
+                        srcset="img/header.webp 1920w" 
+                        type="image/webp">
+                    <source
+                        sizes="1920w" 
+                        srcset="img/header.png 1920w" 
+                        type="image/jpeg">
+                    <img loading="lazy" decoding="async" src="img/header.png" lazyalt="imagen" width="1000" height="600">
+                </picture>
+            </div> <!-- imagenHeader -->
+            <div class="textoHeader">
+                <p class="taglineProducto">Sonido Profesional</p>
+                <h1 class="nombreProducto degradadoVerde">TatoPRO</h1>
+                <p class="descripcionProducto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae adipisci vel neque odio? Ea quae similique, autem blanditiis 
+                minus nesciunt rerum sed aliquam architecto non eos numquam hic magni porro.</p>
+                <p class="precioProducto">desde<span>$299</span></p>
+            </div>
+        </div>
+    </header>
+    <main class="contenedor modelos">
+        <h2 class="texto-center degradadoVerde tituloModelos">Elige tus TatoPRO</h2>
+       
+        <div id="productos" class="listadoProductos contenedorMio">
+            <!-- insertar productos -->
+        
+        </div>
+    </main>
+
+    <section class="carrito">
+        <div>
+            <h2 class="texto-center tituloCarrito" >Tu carrito</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center" scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaBody">
+                    <!-- aqui tabla carrito -->
+                </tbody>
+            </table>
+            <div class="ultimoCarrito contenedor">
+                <h4 class="montoAPagar" id="total">Total a pagar $:</h4>
+                <button id="vaciarCarrito">Vaciar carrito</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- mis codigos -->
+    <script src="productos.js"></script>
+    <script src="codigo.js"></script>
+</body>
