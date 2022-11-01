@@ -1,6 +1,7 @@
 const carrito = [];
 let totalApagar;
 let seccionProds = document.getElementById("productos");
+let botonRevertir = document.getElementById("vaciarCarrito");
 
 function seccionProductos(){
     for(const auricular of productosAuris){
@@ -37,4 +38,17 @@ function agregarAlCarrito(auricularElegido){
     let total = document.getElementById("total");
     total.innerText = `total a pagar ${totalApagar}`;
 };
+
+vaciar = botonRevertir.addEventListener("click", vaciarCarrito);
+
+function vaciarCarrito(){
+    productosAuris.forEach(auricular => {
+        carrito.pop(auricular);
+    });
+    alert = ("Carrito vaciado");
+    document.getElementById("tablaBody").innerHTML = "";
+    totalApagar = 0;
+    let total = document.getElementById("total");
+    total.innerText = `total a pagar ${totalApagar}`;
+}
 
