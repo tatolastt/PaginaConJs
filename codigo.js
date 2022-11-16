@@ -231,13 +231,12 @@ botonComprar.onclick = () => {
             timer: 2300
         })
     }else{
-        fetch('https://jsonplaceholder.typicode.com/posts/1', {
-            method: 'PUT',
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
             body: JSON.stringify({
-                id: 104,
-                title: 'headphones',
-                body: 'compra exitosa',
-                userId: carrito.length
+                title: 'Auriculares',
+                body: 'compro auriculares',
+                userId: 102,
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
