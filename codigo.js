@@ -2,8 +2,10 @@ let carrito = [];
 let totalApagar;
 let aurisJSON=[];
 let ofertaActiva = false;
+let pedidoId = 0;
 let seccionProds = document.getElementById("productos");
 let botonRevertir = document.getElementById("vaciarCarrito");
+let botonComprar = document.getElementById("comprarCarrito");
 
 const GuardarAlLocalStorage = (clave, valor) => { localStorage.setItem(clave,valor); }
 
@@ -157,7 +159,7 @@ function agregarAlCarrito(auricularElegido){
     <tr>
         <td class="texto-center lineaTabla" >${auricularElegido.nombre}</td>
         <td class="texto-center lineaTabla" > $${auricularElegido.precio}</td>
-        <td><button class="btn texto-center" onclick="eliminar(event)">eliminar</button></td>
+        <td><button class="botonEliminar" onclick="eliminar(event)">eliminar</button></td>
     </tr>
     `;
     let totalApagar =  carrito.reduce((acumulador,auricularElegido) => acumulador + auricularElegido.precio,0);
@@ -220,6 +222,75 @@ function vaciarCarrito(){
       }) 
 }
 
+botonComprar.onclick = () => {
+    if(carrito.length==0){
+        Swal.fire({
+            title: 'El carro está vacío',
+            text: 'Selecciona un producto para comprar',
+            icon: 'error',
+            timer: 2300
+        })
+    }else{
+        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'PUT',
+            body: JSON.stringify({
+                id: 104,
+                title: 'headphones',
+                body: 'compra exitosa',
+                userId: carrito.length
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then((response) => response.json())
+        .then((data) =>{
+            console.log(data.id);
+            pedidoId = data.id;
+            Swal.fire({
+                title: 'Has comprado con exito!',
+                text: 'Esperamos que disfrutes tus auriculares , tu pedido de compra es el numero: ' + pedidoId,
+                icon: 'success',
+                timer: 3000
+            })
+        })
+        aurisJSON.forEach(auricular => {
+            carrito.pop(auricular);
+        });
+        document.getElementById("tablaBody").innerHTML = "";
+        totalApagar = 0;
+        let total = document.getElementById("total");
+        total.innerText = `Total: $${totalApagar}`;
+        GuardarAlLocalStorage("carritooAuris", JSON.stringify(carrito));
+    }
+}
 
+//insribirse newsletter
+let botonNewsletter = document.getElementById("inscribirse");
+
+//chequear que no este vacio el input
+let inputNewsletter = document.getElementById("lugarEmail");
+
+botonNewsletter.onclick = () => {
+    if(inputNewsletter.value == ""){
+        Swal.fire({
+            title: 'El campo está vacío',
+            text: 'Ingresa un email',
+            icon: 'error',
+            timer: 2300
+        })
+    }
+    else{
+            console.log(inputNewsletter.value);
+            Swal.fire({
+                title: 'Inscripción exitosa!',
+                text: 'Gracias ' + inputNewsletter.value + ' por suscribirte a nuestro newsletter',
+                icon: 'success',
+                timer: 2300
+            })
+            inputNewsletter.value = "";
+        }
+    }
+    
 
 

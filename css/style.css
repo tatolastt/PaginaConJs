@@ -327,6 +327,21 @@ thead{
     transform: scale(1.2);
 }
 
+.botonEliminar{
+    background-color: var(--primario);
+    color: var(--blanco);
+    font-size: 2rem;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    font-weight: 900;
+    transition-property: transform;
+    transition-duration: .3s;
+}
+
+.botonEliminar:hover{
+    transform: scale(1.2);
+}
 
 /********************* Seccion Newsletter ***********************/
 .newSletter{
@@ -355,7 +370,7 @@ thead{
     padding: 1rem; /* usar padding para hacerlo mas grande*/ 
 }
 
-.formulario input[type="submit"]{
+#inscribirse {
     width: 100%;
     padding: 2rem;
     background-color: var(--primario);
