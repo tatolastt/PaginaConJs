@@ -308,3 +308,91 @@ thead{
     border-radius: 2rem;
     font-weight: 900;
 }
+
+#comprarCarrito{
+    transition-property: transform;
+    transition-duration: .3s;
+}
+
+#comprarCarrito:hover{
+    transform: scale(1.6);
+}
+
+#vaciarCarrito{
+    transition-property: transform;
+    transition-duration: .3s;
+}
+
+#vaciarCarrito:hover{
+    transform: scale(1.2);
+}
+
+
+/********************* Seccion Newsletter ***********************/
+.newSletter{
+    background-image: linear-gradient(to bottom, transparent 50%, var(--blanco) 0%), url(../img/newsletter.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size:100%, 73rem;
+    margin-top: 5rem;
+}
+
+
+
+.contenidoNew{
+    display: grid;
+    grid-template-rows: repeat(2, 30rem);
+    gap: 5rem;
+}
+
+.textoNew{
+    grid-row: 2/3;
+}
+
+
+.formulario input[type="email"]{
+    width: 100%;
+    padding: 1rem; /* usar padding para hacerlo mas grande*/ 
+}
+
+.formulario input[type="submit"]{
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--primario);
+    color: var(--blanco);
+    border-radius: none;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+@media (min-width: 850px){
+    .newSletter{
+        background-image: linear-gradient(to right, transparent 50%, var(--blanco) 0%), url(../img/newsletter.jpg);
+        background-position: center, -12rem -10rem;
+        background-size: 100%, 100rem;
+        padding: 10rem 0;
+        
+    }
+    .contenidoNew{
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+    .textoNew{
+        grid-row: unset;
+        grid-column: 2/3;
+    }
+}
+
+
+/********************* Seccion Footer ***********************/
+
+footer p{
+    text-align: center;
+    font-family: var(--fuenteSecundaria);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--primario);
+    font-weight: 900;
+    padding: 2rem 0;
+}

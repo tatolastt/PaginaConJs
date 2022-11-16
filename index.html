@@ -9,7 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- link toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     
+
     <!-- link normalize -->
     <link rel="stylesheet" href="css/normalize.css">
 
@@ -59,11 +63,12 @@
     <section class="carrito">
         <div>
             <h2 class="texto-center tituloCarrito" >Tu carrito</h4>
-            <table class="table table-striped">
+            <table class="table table-striped contenedor">
                 <thead>
                     <tr>
                         <th class="text-center" scope="col">Nombre</th>
                         <th class="text-center" scope="col">Precio</th>
+                        <th class="text-center" scope="col">accion</th>
                     </tr>
                 </thead>
                 <tbody id="tablaBody">
@@ -71,14 +76,16 @@
                 </tbody>
             </table>
             <div class="ultimoCarrito contenedor">
-                <h4 class="montoAPagar" id="total">Total a pagar $:</h4>
+                <h4 class="montoAPagar" id="total">Total: $0</h4>
+                <button id="comprarCarrito">COMPRAR</button>
                 <button id="vaciarCarrito">Vaciar carrito</button>
+                
             </div>
             
         </div>
     </section>
-    
-    <section class="newSletter">
+
+    <section class="newSletter contene">
         <div class="contenidoNew contenedor">
             <div class="textoNew">
                 <h2>Recibe Actualizaciones</h2>
@@ -101,6 +108,9 @@
     </footer>
 
     <!-- mis codigos -->
-    <script src="productos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="codigo.js"></script>
+    
+
 </body>
